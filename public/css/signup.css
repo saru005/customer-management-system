@@ -1,0 +1,94 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    width: 400px;
+    padding: 20px;
+    border: 1px solid rgb(177, 171, 171);
+    border-radius: 4px;
+    background-color: rgb(247, 241, 241);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.divider {
+    width: 100%;
+    color: black;
+}
+
+.form-body {
+    width: 100%;
+    margin-top: 10px;
+    /* padding: 0 10px; */
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    gap: 10px;
+}
+
+.form-body input {
+    /* width: 100%; */
+    padding: 7px;
+    border: 1px solid black;
+    border-radius: 5px;
+    /* background-color: black; */
+    /* color: white; */
+    padding: 10px;
+}
+
+.form-body button {
+    width: 50%;
+    padding: 7px;
+    margin-top: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    color: white;
+    background-color: brown;
+    cursor: pointer;
+}
+
+.form-body input:focus {
+    outline: 2px solid brown;
+}
+
+form {
+    width: 100%;
+}
+
+.gender {
+    padding: 7px;
+    border: 1px solid black;
+    border-radius: 5px;
+    /* background-color: black; */
+    color: #a1a375;
+
+    padding: 10px;
+}
+
+#gender::placeholder {
+    color: #a1a375;
+}
+
+#gender:focus {
+    outline: 2px solid brown;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group .error-message {
+    color: red;
+}
+
+.submit-btn{
+    align-self: center;
+}

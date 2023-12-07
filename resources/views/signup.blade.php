@@ -25,7 +25,7 @@
                         <span class="error-message" id="email"></span>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="mobile" placeholder="Enter Mobile">
+                        <input type="tel" name="mobile" placeholder="Enter Mobile">
                         <span class="error-message" id="mobile"></span>
                     </div>
                     <div class="form-group">
@@ -53,6 +53,7 @@
                         <span class="error-message" id="confirm_password"></span>
                     </div>
                     <button class="submit-btn" type="submit">Signup</button>
+                    <a id="login-link" href="{{route('login')}}">Login</a>
                 </div>
             </form>
         </div>
@@ -64,6 +65,7 @@
         $(document).ready(function() {
             $('#signupForm').on('submit', function(e) {
                 e.preventDefault();
+                const form = $(this);
                 var data = $(this).serialize();
                 var url = $(this).attr('action');
                 var method = $(this).attr('method');
@@ -74,10 +76,11 @@
                     success: function(response) {
                         console.log(response);
                         Swal.fire({
-                            icon: 'error',
-                            title: 'Error!',
-                            text: value
+                            icon: 'success',
+                            title: 'Success!',
+                            text: response.message
                         });
+                        $(form).trigger('reset');
                     },
                     error: function(error) {
                         if (error.status === 422) {
@@ -87,7 +90,6 @@
                             });
                         } else {
                             console.log(error);
-                            // Handle other error responses
                         }
                     }
                 });

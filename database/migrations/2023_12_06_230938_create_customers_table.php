@@ -20,7 +20,7 @@ return new class extends Migration
             $table->enum('gender',['male','female','other']);
             $table->string('state',255);
             $table->string('district',255);
-            $table->enum('status',['0','1']);
+            $table->enum('status', ['0', '1'])->default('0');
             $table->timestamps();
         });
     }
